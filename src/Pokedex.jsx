@@ -8,7 +8,7 @@ const Pokedex = (props) => {
   let winner;
   if (props.isWinner) {
     winner =
-      <Box sx={{mt: 4}}>
+      <Box sx={{my: 4}}>
         <Typography variant="h3" component="h3">
           THIS HAND WINS!
         </Typography>
@@ -21,7 +21,7 @@ const Pokedex = (props) => {
           <Pokecard id={p.id} name={p.name} type={p.type} base_experience={p.base_experience}/>
         ))}
       </Grid>
-      <Box sx={{mt: 4}}>Total Exp: {props.exp}</Box>
+      <Box sx={{my: 4}}>Total Exp: {props.exp}</Box>
       {winner}
     </Box>
   )
