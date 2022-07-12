@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
 }
@@ -39,4 +43,9 @@
 
 button {
   font-size: calc(10px + 2vmin);
+}
+
+/****** Pokecard styles ******/
+.pokecard-card {
+  background-color: #fff50a;
 }
