@@ -1,18 +1,29 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Chip from '@mui/material/Chip';
+import Typography from '@mui/material/Typography';
 
 const Pokecard = (props) => {
   let imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`
   return (
-    <Grid item lg={3} md={4} sm={6}>
-      <Card className="hover:scale-105 transition-all pokecard-card" variant="outlined" sx={{ p: 4 }}>
-        <div className="pokecard-name">{props.name}</div>
-        <img className="pokecard-image" src={imgSrc} alt={props.name} />
-        <div className="pokecard-type">Type: {props.type}</div>
-        <div className="pokecard-exp">Exp: {props.base_experience}</div>
-      </Card>
-    </Grid>
+    <Card className="hover:scale-105 transition-all pokecard-card" variant="outlined" sx={{ p: 4 }}>
+      <CardMedia
+        component="img"
+        image={imgSrc}
+        alt={props.name}
+      />
+      <CardContent>
+        <Typography className="pokecard-name" gutterBottom variant="h5" component="div">
+          {props.name}
+        </Typography>
+        <Chip label={props.type} className="pokecard-type" sx={{ mb: 2 }}></Chip>
+        <Typography className="pokecard-exp"  variant="p" component="div">
+          Exp: {props.base_experience}
+        </Typography>
+      </CardContent>
+    </Card>
   )
 }
 
